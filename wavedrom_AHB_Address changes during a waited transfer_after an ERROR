@@ -1,0 +1,17 @@
+{ signal: [
+  { name: "HCLK",           wave: "p......." },
+  { name: "HTRANS[1:0]",    wave: "2.......x2.....x2.........................x2.....x2......x2.....",data: ["", "SEQ", "SEQ", "IDLE"], period:0.1},
+  { name: "HADDR[31:0]",    wave: "2.......x2.....x2.........................x2.....x2......x2.....",data: ["", "0x24", "0x28", "0xC0"], period:0.1},
+  { name: "HBURST[2:0]",    wave: "2............x2.....x2.........................x2.....x2......x2.....", data:["", "INCR4", "INCR4"],period:0.1, phase:1},
+  { name: "HREADY",         wave: "1.......1.......0............................1.......1.........2.......",data:["", "", "", "", ""], period:0.1},
+  { name: "HRESP",          wave: "0.......0.......0.......0.......1........1.......0.......2.......",data:["", "", "D(A)", "D(B)"], period:0.1},
+ ],
+ head:{
+   text:'Address changes during a waited transfer, after an ERROR',
+   tick:['0']
+ },
+ foot:{
+   text:'Figure 3-17',
+   },
+  config: { hscale: 2 }
+}

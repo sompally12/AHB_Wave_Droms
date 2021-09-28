@@ -1,0 +1,17 @@
+{ signal: [
+  { name: "HCLK",           wave: "p........" },
+  { name: "HTRANS[1:0]",    wave: "2.......x2.....x2...............x2.........................x2.....x2.....",data: ["", "SEQ", "BUSY", "SEQ", "SEQ"], period:0.1},
+  { name: "HADDR[31:0]",    wave: "2.......x2.....x2...............x2.........................x2.....x2.....",data: ["", "0x64", "0x68", "0x10", "0x14"], period:0.1},
+  { name: "HBURST[2:0]",    wave: "2............x2.....x2...............x2.........................x2.....x2.....", data:["", "INCR", "INCR","INCR4", "INCR4"],period:0.1, phase:1},
+  { name: "HREADY",         wave: "1.......1.......0.....................................1.......1........1........",data:["", "", "", "D(A)", ""], period:0.1},
+  { name: "HRDATA[31:0]",   wave: "2.........x..2....x.....................................2.......x.2.....x2.....",data:["", "", "D(0x64)", "D(0x10)"], period:0.1},
+ ],
+ head:{
+   text:' Waited transfer, BUSY to NONSEQ for an undefined length burst',
+   tick:['0']
+ },
+ foot:{
+   text:'Figure 3-15',
+   },
+  config: { hscale: 2 }
+}

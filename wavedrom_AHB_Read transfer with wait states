@@ -1,0 +1,16 @@
+{ signal: [
+  { name: "HCLK",           wave: "P....." },
+  { name: "HADDR[31:0]",    wave: "2.......x2......x2..........................x2.....",data: ["", "A", "B"], period:0.1},
+  { name: "HWRITE",         wave: "2.........0........2............................x2.....", period:0.1},
+  { name: "HRDATA[31:0]",   wave: "2........x2.....x........................2...x2.....",data:["", "", "Data(A)"], period:0.1},
+  { name: "HREADY",         wave: "1............1........0.....................1......2........",period:0.1, phase:1},
+ ],
+ head:{
+   text:'Read transfer with wait states',
+   tick:0,
+ },
+ foot:{
+   text:'Figure 3-3',
+   },
+  config: { hscale: 2 }
+}
